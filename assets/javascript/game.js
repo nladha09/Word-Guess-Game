@@ -65,6 +65,9 @@ function Hangman() {
         "poisonivy",
 		"vixen",
         "greenarrow",
+        // gotta throw in some hard ones ---
+        "zod",
+        "vandalsavage",
 	]
 
 	this.word = this.wordList[Math.floor(Math.random() * this.wordList.length)];
@@ -93,15 +96,17 @@ Hangman.prototype.checkGuess = function(char) {
 	}
 
 	if (this.errors >= maxErrors) {
-		losses++;
+        losses++;
 		this.alertLines = youLose;
-		this.gameOver = true;
+        this.gameOver = true;
+        alert("YOU LOSE! :(")
 	}
 
 	if (!this.visibleLetters.includes(false)) {
 		wins++;
 		this.alertLines = youWin;
-		this.gameOver = true;
+        this.gameOver = true;
+        alert("YOU WIN! :)")
 	}
 
 	game.updatePageData();
@@ -141,11 +146,7 @@ Hangman.prototype.updatePageData = function() {
 	for (var i = tempString.length; i < 43; i++) {
 		tempString += " ";
 	}
-	lossCountElement.textContent = tempString;
-
-	for (var i = 0; i < blinkElements.length; i++) {
-		blinkElements[i].textContent = (this.gameOver ? pressAnyKeyToReset[i] : pressAnyKeyToStart[i]);
-	}
+    lossCountElement.textContent = tempString;
 
 	for (var i = 0; i < alertLineElements.length; i++) {
 		alertLineElements[i].textContent = (this.alertLines[i]);
