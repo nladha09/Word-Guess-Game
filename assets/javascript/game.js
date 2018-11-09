@@ -95,13 +95,13 @@ Hangman.prototype.checkGuess = function(char) {
 	if (this.errors >= maxErrors) {
         losses++;
         this.gameOver = true;
-        alert("YOU LOSE! :(")
+    setTimeout(function(){ alert("YOU LOSE! :("); }, 200);
 	}
 
 	if (!this.visibleLetters.includes(false)) {
 		wins++;
         this.gameOver = true;
-        alert("YOU WIN! :)")
+	setTimeout(function(){ alert("YOU WIN! :)"); }, 200);
 	}
 
 	game.updatePageData();
