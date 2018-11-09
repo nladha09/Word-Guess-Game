@@ -9,8 +9,6 @@ var errorCountElement = document.getElementById("error-count");
 var winCountElement = document.getElementById("win-count");
 var lossCountElement = document.getElementById("loss-count");
 
-var alertLineElements = document.getElementsByClassName("alert-line");
-
 var validGuesses = [ 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z' ];
 
 var pressAnyKeyToStart = [
@@ -75,7 +73,6 @@ function Hangman() {
 	this.errors = 0;
 	this.visibleLetters = [];
 	this.gameOver = false;
-	this.alertLines = emptyAlert;
 	for (var i = 0; i < this.word.length; i++) {
 		this.visibleLetters[i] = (false);
 	}
@@ -97,14 +94,12 @@ Hangman.prototype.checkGuess = function(char) {
 
 	if (this.errors >= maxErrors) {
         losses++;
-		this.alertLines = youLose;
         this.gameOver = true;
         alert("YOU LOSE! :(")
 	}
 
 	if (!this.visibleLetters.includes(false)) {
 		wins++;
-		this.alertLines = youWin;
         this.gameOver = true;
         alert("YOU WIN! :)")
 	}
@@ -147,10 +142,6 @@ Hangman.prototype.updatePageData = function() {
 		tempString += " ";
 	}
     lossCountElement.textContent = tempString;
-
-	for (var i = 0; i < alertLineElements.length; i++) {
-		alertLineElements[i].textContent = (this.alertLines[i]);
-	}
 }
 
 game.updatePageData();
