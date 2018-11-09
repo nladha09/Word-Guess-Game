@@ -1,12 +1,13 @@
 body {
 	position: relative;
-	/* add in bg image */
-	background-color: #282828;
+    background: url("../images/bg-image.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 body {
-	font-family: "Courier New", Courier, monospace;
-	color: #33FF33;
+	font-family: 'Waiting for the Sunrise', cursive;
+	color: white;
 }
 
 #title {
@@ -26,19 +27,19 @@ body {
 }
 
 .panel {
-	background-color: #282828;
-	padding: 20px;
+	background-color: black;
+	padding: 10px;
 	margin: 10px;
 }
 
 #word-display {
 	text-align: center;
-	font-size: 32px;
+	font-size: 30px;
 	padding: 10px;
 	padding-bottom: 20px;
 }
 
 #general-display {
 	text-align: center;
-	font-size: 16px;
+	font-size: 30px;
 }

@@ -9,7 +9,6 @@ var errorCountElement = document.getElementById("error-count");
 var winCountElement = document.getElementById("win-count");
 var lossCountElement = document.getElementById("loss-count");
 
-var blinkElements = document.getElementsByClassName("blinking");
 var alertLineElements = document.getElementsByClassName("alert-line");
 
 var validGuesses = [ 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z' ];
@@ -46,31 +45,26 @@ document.onkeyup = function(event) {
 	}
 }
 
-// window.setInterval(function() {
-// 	if (blinkElements.length > 0) {
-// 		if (game.guessedLetters.length === 0 || game.gameOver) {
-// 			if (blinkElements[0].style.opacity === "1") {
-// 				for (var i = 0; i < blinkElements.length; i++) {
-// 					blinkElements[i].style.opacity = "0";
-// 				}
-// 			} else {
-// 				for (var i = 0; i < blinkElements.length; i++) {
-// 					blinkElements[i].style.opacity = "1";
-// 				}
-// 			}
-// 		} else {
-// 			for (var i = 0; i < blinkElements.length; i++) {
-// 				blinkElements[i].style.opacity = "0";
-// 			}
-// 		}
-// 	}
-// }, 750);
-
 function Hangman() {
 	this.wordList = [
-		"word1",
-		"word2",
-		"word3",
+		"superman",
+		"batman",
+        "catwoman",
+        "wonderwoman",
+		"greenlantern",
+        "watchmen",
+        "flash",
+		"aquaman",
+        "cyborg",
+        "robin",
+		"brainiac",
+        "titans",
+        "joker",
+		"harleyquinn",
+        "twoface",
+        "poisonivy",
+		"vixen",
+        "greenarrow",
 	]
 
 	this.word = this.wordList[Math.floor(Math.random() * this.wordList.length)];
