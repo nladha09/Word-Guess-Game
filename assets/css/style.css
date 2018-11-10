@@ -1,6 +1,7 @@
 body {
 	position: relative;
-    background: url("../images/bg-image.jpg");
+	background: url("../images/bg-image.jpg");
+	font-weight: bold;
     background-size: cover;
     background-repeat: no-repeat;
 }
